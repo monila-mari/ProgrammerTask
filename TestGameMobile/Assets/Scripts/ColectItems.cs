@@ -9,6 +9,11 @@ public class ColectItems : MonoBehaviour
     public Slider collectBar; 
     public TextMeshProUGUI statusText;
     public Image barFill;
+
+    public GameObject poorModel;
+    public GameObject wealthyModel;
+    public GameObject richModel;
+
     public float collectBarValue = 0f;
     public float moneyValueIncrease = 0.05f;
     public float bottleValueDecrease = 0.1f;
@@ -46,16 +51,28 @@ public class ColectItems : MonoBehaviour
         {
             statusText.text = "Бедный";
             barFill.color = Color.red;
+            SwitchModel(poorModel);
         }
-        else if (collectBarValue < 0.66f)
+        else if (collectBarValue >= 0.33f && collectBarValue < 0.66f)
         {
             statusText.text = "Состоятельный";
             barFill.color = Color.yellow;
+            SwitchModel(wealthyModel);
         }
         else
         {
             statusText.text = "Богатый";
             barFill.color = Color.green;
+            SwitchModel(richModel);
         }
+    }
+
+    void SwitchModel(GameObject newModel)
+    {
+        poorModel.SetActive(false);
+        wealthyModel.SetActive(false);
+        richModel.SetActive(false);
+
+        newModel.SetActive(true);
     }
 }
