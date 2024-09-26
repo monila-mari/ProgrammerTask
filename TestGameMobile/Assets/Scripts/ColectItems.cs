@@ -21,6 +21,9 @@ public class ColectItems : MonoBehaviour
     private float maxBarValue = 1f;
     private float minBarValue = 0f;
 
+    public Text moneyText;
+    private int moneyCount = 0;
+
     void Start()
     {
         UpdateCollectBar();
@@ -75,4 +78,5 @@ public class ColectItems : MonoBehaviour
 
         newModel.SetActive(true);
     }
+
 }

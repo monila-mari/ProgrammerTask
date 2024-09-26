@@ -4646,7 +4646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectBar: {fileID: 1741983022}
-  statusText: {fileID: 10357722}
+  statusText: {fileID: 0}
   barFill: {fileID: 1079312187}
   poorModel: {fileID: 150196119}
   wealthyModel: {fileID: 1411305744}
@@ -4654,6 +4654,7 @@ MonoBehaviour:
   collectBarValue: 0
   moneyValueIncrease: 0.1
   bottleValueDecrease: 0.2
+  moneyText: {fileID: 0}
 --- !u!1001 &751908517
 PrefabInstance:
   m_ObjectHideFlags: 0
