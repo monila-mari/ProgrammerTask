@@ -14,6 +14,9 @@ public class ColectItems : MonoBehaviour
     public GameObject wealthyModel;
     public GameObject richModel;
 
+    public GameObject moneyParticlePrefab;
+    public GameObject bottlesParticlePrefab;
+
     public float collectBarValue = 0f;
     public float moneyValueIncrease = 0.05f;
     public float bottleValueDecrease = 0.1f;
@@ -21,8 +24,6 @@ public class ColectItems : MonoBehaviour
     private float maxBarValue = 1f;
     private float minBarValue = 0f;
 
-    public Text moneyText;
-    private int moneyCount = 0;
 
     void Start()
     {
@@ -34,6 +35,9 @@ public class ColectItems : MonoBehaviour
         {
             collectBarValue += moneyValueIncrease;
             collectBarValue = Mathf.Clamp(collectBarValue, minBarValue, maxBarValue);
+
+            Instantiate(moneyParticlePrefab, other.transform.position, Quaternion.identity);
+
             Destroy(other.gameObject);
             UpdateCollectBar();
         }
@@ -41,6 +45,9 @@ public class ColectItems : MonoBehaviour
         {
             collectBarValue -= bottleValueDecrease;
             collectBarValue = Mathf.Clamp(collectBarValue, minBarValue, maxBarValue);
+
+            Instantiate(bottlesParticlePrefab, other.transform.position, Quaternion.identity);
+
             Destroy(other.gameObject);
             UpdateCollectBar();
         }

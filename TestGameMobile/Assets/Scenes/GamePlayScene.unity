@@ -353,7 +353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &83093958
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4646,15 +4646,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectBar: {fileID: 1741983022}
-  statusText: {fileID: 0}
+  statusText: {fileID: 10357722}
   barFill: {fileID: 1079312187}
   poorModel: {fileID: 150196119}
   wealthyModel: {fileID: 1411305744}
   richModel: {fileID: 717687240}
+  moneyParticlePrefab: {fileID: 7655688670434926435, guid: acec9369ef9eb0149a75d0dbec0ad6ac,
+    type: 3}
+  bottlesParticlePrefab: {fileID: 7655688670434926435, guid: acec9369ef9eb0149a75d0dbec0ad6ac,
+    type: 3}
   collectBarValue: 0
   moneyValueIncrease: 0.1
   bottleValueDecrease: 0.2
-  moneyText: {fileID: 0}
 --- !u!1001 &751908517
 PrefabInstance:
   m_ObjectHideFlags: 0
