@@ -4657,7 +4657,7 @@ MonoBehaviour:
   richModel: {fileID: 717687240}
   moneyParticlePrefab: {fileID: 7655688670434926435, guid: acec9369ef9eb0149a75d0dbec0ad6ac,
     type: 3}
-  bottlesParticlePrefab: {fileID: 7655688670434926435, guid: acec9369ef9eb0149a75d0dbec0ad6ac,
+  bottlesParticlePrefab: {fileID: 7655688670434926435, guid: a896864c45eb7904ca3d7409bbc2da19,
     type: 3}
   collectBarValue: 0
   moneyValueIncrease: 0.1
