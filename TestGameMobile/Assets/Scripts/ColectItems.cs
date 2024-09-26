@@ -24,9 +24,15 @@ public class ColectItems : MonoBehaviour
     private float maxBarValue = 1f;
     private float minBarValue = 0f;
 
+    public AudioClip moneySound; 
+    public AudioClip bottleSound;
+    private AudioSource audioSource;
+
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         UpdateCollectBar();
     }
     private void OnTriggerEnter(Collider other)
@@ -37,6 +43,7 @@ public class ColectItems : MonoBehaviour
             collectBarValue = Mathf.Clamp(collectBarValue, minBarValue, maxBarValue);
 
             Instantiate(moneyParticlePrefab, other.transform.position, Quaternion.identity);
+            PlaySound(moneySound);
 
             Destroy(other.gameObject);
             UpdateCollectBar();
@@ -47,9 +54,18 @@ public class ColectItems : MonoBehaviour
             collectBarValue = Mathf.Clamp(collectBarValue, minBarValue, maxBarValue);
 
             Instantiate(bottlesParticlePrefab, other.transform.position, Quaternion.identity);
+            PlaySound(bottleSound);
 
             Destroy(other.gameObject);
             UpdateCollectBar();
+        }
+    }
+
+    void PlaySound(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 
